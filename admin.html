@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - PremioPack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="logo-icon"><i class="fas fa-box-open"></i></span>
+            <span class="logo-text">Premio<span class="accent">Pack</span></span>
+            <span class="admin-badge">Admin</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#general" class="nav-item active" data-section="general">
+                <i class="fas fa-cog"></i> General
+            </a>
+            <a href="#hero" class="nav-item" data-section="hero">
+                <i class="fas fa-images"></i> Hero Slides
+            </a>
+            <a href="#about" class="nav-item" data-section="about">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="#services" class="nav-item" data-section="services">
+                <i class="fas fa-concierge-bell"></i> Services
+            </a>
+            <a href="#products" class="nav-item" data-section="products">
+                <i class="fas fa-box"></i> Products
+            </a>
+            <a href="#faq" class="nav-item" data-section="faq">
+                <i class="fas fa-question-circle"></i> FAQ
+            </a>
+            <a href="#contact" class="nav-item" data-section="contact">
+                <i class="fas fa-address-card"></i> Contact
+            </a>
+            <a href="#footer" class="nav-item" data-section="footer">
+                <i class="fas fa-shoe-prints"></i> Footer
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../index.html" target="_blank" class="view-site-btn">
+                <i class="fas fa-external-link-alt"></i> View Site
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <h1>Website Management</h1>
+            <div class="header-actions">
+                <button class="btn btn-outline" id="resetBtn"><i class="fas fa-undo"></i> Reset</button>
+                <button class="btn btn-primary" id="saveBtn"><i class="fas fa-save"></i> Save All</button>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <!-- Toast -->
+            <div class="toast" id="toast">
+                <i class="fas fa-check-circle"></i>
+                <span id="toastMsg">Saved successfully!</span>
+            </div>
+
+            <!-- General Settings -->
+            <section class="panel active" id="panel-general">
+                <h2><i class="fas fa-cog"></i> General Settings</h2>
+                <div class="form-card">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" id="companyName" placeholder="PremioPack">
+                        </div>
+                        <div class="form-group">
+                            <label>Company Tagline</label>
+                            <input type="text" id="companyTagline" placeholder="Premium Packaging Solutions">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" id="globalPhone" placeholder="+971 50 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="globalEmail" placeholder="info@premiumpack.ae">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" id="globalAddress" placeholder="Dubai, United Arab Emirates">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Facebook URL</label>
+                            <input type="text" id="socialFacebook" placeholder="https://facebook.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label>Instagram URL</label>
+                            <input type="text" id="socialInstagram" placeholder="https://instagram.com/...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>LinkedIn URL</label>
+                            <input type="text" id="socialLinkedin" placeholder="https://linkedin.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp Number</label>
+                            <input type="text" id="socialWhatsapp" placeholder="+971501234567">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hero Slides -->
+            <section class="panel" id="panel-hero">
+                <h2><i class="fas fa-images"></i> Hero Slides</h2>
+                <div id="heroSlides"></div>
+                <button class="btn btn-add" id="addSlide"><i class="fas fa-plus"></i> Add Slide</button>
+            </section>
+
+            <!-- About -->
+            <section class="panel" id="panel-about">
+                <h2><i class="fas fa-info-circle"></i> About Section</h2>
+                <div class="form-card">
+                    <div class="form-group">
+                        <label>Section Title</label>
+                        <input type="text" id="aboutTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>Description 1</label>
+                        <textarea id="aboutText1" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Description 2</label>
+                        <textarea id="aboutText2" rows="4"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Experience Badge Number</label>
+                            <input type="text" id="aboutExpNumber" placeholder="7+">
+                        </div>
+                        <div class="form-group">
+                            <label>Experience Badge Text</label>
+                            <input type="text" id="aboutExpText" placeholder="Years of Excellence">
+                        </div>
+                    </div>
+                </div>
+                <h3>Features</h3>
+                <div id="aboutFeatures"></div>
+                <button class="btn btn-add" id="addFeature"><i class="fas fa-plus"></i> Add Feature</button>
+            </section>
+
+            <!-- Services -->
+            <section class="panel" id="panel-services">
+                <h2><i class="fas fa-concierge-bell"></i> Services</h2>
+                <div id="servicesList"></div>
+                <button class="btn btn-add" id="addService"><i class="fas fa-plus"></i> Add Service</button>
+            </section>
+
+            <!-- Products -->
+            <section class="panel" id="panel-products">
+                <h2><i class="fas fa-box"></i> Products</h2>
+                <div id="productsList"></div>
+                <button class="btn btn-add" id="addProduct"><i class="fas fa-plus"></i> Add Product</button>
+            </section>
+
+            <!-- FAQ -->
+            <section class="panel" id="panel-faq">
+                <h2><i class="fas fa-question-circle"></i> FAQ</h2>
+                <div id="faqList"></div>
+                <button class="btn btn-add" id="addFaq"><i class="fas fa-plus"></i> Add FAQ</button>
+            </section>
+
+            <!-- Contact -->
+            <section class="panel" id="panel-contact">
+                <h2><i class="fas fa-address-card"></i> Contact Section</h2>
+                <div class="form-card">
+                    <div class="form-group">
+                        <label>Section Title</label>
+                        <input type="text" id="contactTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="contactDesc" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Working Hours</label>
+                        <input type="text" id="contactHours" placeholder="Sun - Thu: 9:00 AM - 6:00 PM">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <section class="panel" id="panel-footer">
+                <h2><i class="fas fa-shoe-prints"></i> Footer</h2>
+                <div class="form-card">
+                    <div class="form-group">
+                        <label>Footer Description</label>
+                        <textarea id="footerDesc" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Copyright Text</label>
+                        <input type="text" id="footerCopyright">
+                    </div>
+                    <div class="form-group">
+                        <label>Newsletter Text</label>
+                        <input type="text" id="footerNewsletter">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
