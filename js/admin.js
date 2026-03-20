@@ -110,7 +110,7 @@ let data = loadData();
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 
-function showToast(msg = 'Saved successfully!') {
+function showToast(msg = '保存成功！') {
     const toast = $('#toast');
     $('#toastMsg').textContent = msg;
     toast.classList.add('show');
@@ -156,44 +156,44 @@ function renderHero() {
         container.innerHTML += `
         <div class="item-card" data-index="${i}">
             <div class="item-card-header">
-                <h4><span class="item-number">${i + 1}</span> Slide ${i + 1}</h4>
-                <button class="btn btn-remove" onclick="removeSlide(${i})"><i class="fas fa-trash"></i> Remove</button>
+                <h4><span class="item-number">${i + 1}</span> 轮播图 ${i + 1}</h4>
+                <button class="btn btn-remove" onclick="removeSlide(${i})"><i class="fas fa-trash"></i> 删除</button>
             </div>
             <div class="form-group">
-                <label>Background Image URL</label>
+                <label>背景图片 URL</label>
                 <input type="text" value="${slide.image}" onchange="updateSlide(${i}, 'image', this.value)">
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Subtitle</label>
+                    <label>副标题</label>
                     <input type="text" value="${slide.subtitle}" onchange="updateSlide(${i}, 'subtitle', this.value)">
                 </div>
                 <div class="form-group">
-                    <label>Title (use &lt;br&gt; for line break)</label>
+                    <label>标题（使用 &lt;br&gt; 换行）</label>
                     <input type="text" value="${slide.title}" onchange="updateSlide(${i}, 'title', this.value)">
                 </div>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>描述文字</label>
                 <textarea rows="2" onchange="updateSlide(${i}, 'description', this.value)">${slide.description}</textarea>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Button 1 Text</label>
+                    <label>按钮 1 文字</label>
                     <input type="text" value="${slide.btn1Text}" onchange="updateSlide(${i}, 'btn1Text', this.value)">
                 </div>
                 <div class="form-group">
-                    <label>Button 1 Link</label>
+                    <label>按钮 1 链接</label>
                     <input type="text" value="${slide.btn1Link}" onchange="updateSlide(${i}, 'btn1Link', this.value)">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Button 2 Text</label>
+                    <label>按钮 2 文字</label>
                     <input type="text" value="${slide.btn2Text}" onchange="updateSlide(${i}, 'btn2Text', this.value)">
                 </div>
                 <div class="form-group">
-                    <label>Button 2 Link</label>
+                    <label>按钮 2 链接</label>
                     <input type="text" value="${slide.btn2Link}" onchange="updateSlide(${i}, 'btn2Link', this.value)">
                 </div>
             </div>
@@ -215,21 +215,21 @@ function renderAbout() {
         container.innerHTML += `
         <div class="item-card" data-index="${i}">
             <div class="item-card-header">
-                <h4><span class="item-number">${i + 1}</span> Feature ${i + 1}</h4>
-                <button class="btn btn-remove" onclick="removeFeature(${i})"><i class="fas fa-trash"></i> Remove</button>
+                <h4><span class="item-number">${i + 1}</span> 特色 ${i + 1}</h4>
+                <button class="btn btn-remove" onclick="removeFeature(${i})"><i class="fas fa-trash"></i> 删除</button>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Icon Class (Font Awesome)</label>
+                    <label>图标类名（Font Awesome）</label>
                     <input type="text" value="${f.icon}" onchange="updateFeature(${i}, 'icon', this.value)">
                 </div>
                 <div class="form-group">
-                    <label>Title</label>
+                    <label>标题</label>
                     <input type="text" value="${f.title}" onchange="updateFeature(${i}, 'title', this.value)">
                 </div>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>描述</label>
                 <input type="text" value="${f.desc}" onchange="updateFeature(${i}, 'desc', this.value)">
             </div>
         </div>`;
@@ -243,21 +243,21 @@ function renderServices() {
         container.innerHTML += `
         <div class="item-card" data-index="${i}">
             <div class="item-card-header">
-                <h4><span class="item-number">${i + 1}</span> Service ${i + 1}</h4>
-                <button class="btn btn-remove" onclick="removeService(${i})"><i class="fas fa-trash"></i> Remove</button>
+                <h4><span class="item-number">${i + 1}</span> 服务 ${i + 1}</h4>
+                <button class="btn btn-remove" onclick="removeService(${i})"><i class="fas fa-trash"></i> 删除</button>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Icon Class (Font Awesome)</label>
+                    <label>图标类名（Font Awesome）</label>
                     <input type="text" value="${s.icon}" onchange="updateService(${i}, 'icon', this.value)">
                 </div>
                 <div class="form-group">
-                    <label>Title</label>
+                    <label>标题</label>
                     <input type="text" value="${s.title}" onchange="updateService(${i}, 'title', this.value)">
                 </div>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>描述</label>
                 <textarea rows="2" onchange="updateService(${i}, 'desc', this.value)">${s.desc}</textarea>
             </div>
         </div>`;
@@ -271,20 +271,20 @@ function renderProducts() {
         container.innerHTML += `
         <div class="item-card" data-index="${i}">
             <div class="item-card-header">
-                <h4><span class="item-number">${i + 1}</span> Product ${i + 1}</h4>
-                <button class="btn btn-remove" onclick="removeProduct(${i})"><i class="fas fa-trash"></i> Remove</button>
+                <h4><span class="item-number">${i + 1}</span> 产品 ${i + 1}</h4>
+                <button class="btn btn-remove" onclick="removeProduct(${i})"><i class="fas fa-trash"></i> 删除</button>
             </div>
             <div class="form-group">
-                <label>Image URL</label>
+                <label>图片 URL</label>
                 <input type="text" value="${p.image}" onchange="updateProduct(${i}, 'image', this.value)">
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label>Title</label>
+                    <label>标题</label>
                     <input type="text" value="${p.title}" onchange="updateProduct(${i}, 'title', this.value)">
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
+                    <label>描述</label>
                     <input type="text" value="${p.desc}" onchange="updateProduct(${i}, 'desc', this.value)">
                 </div>
             </div>
@@ -299,15 +299,15 @@ function renderFaq() {
         container.innerHTML += `
         <div class="item-card" data-index="${i}">
             <div class="item-card-header">
-                <h4><span class="item-number">${i + 1}</span> Question ${i + 1}</h4>
-                <button class="btn btn-remove" onclick="removeFaq(${i})"><i class="fas fa-trash"></i> Remove</button>
+                <h4><span class="item-number">${i + 1}</span> 问题 ${i + 1}</h4>
+                <button class="btn btn-remove" onclick="removeFaq(${i})"><i class="fas fa-trash"></i> 删除</button>
             </div>
             <div class="form-group">
-                <label>Question</label>
+                <label>问题</label>
                 <input type="text" value="${f.q}" onchange="updateFaq(${i}, 'q', this.value)">
             </div>
             <div class="form-group">
-                <label>Answer</label>
+                <label>回答</label>
                 <textarea rows="3" onchange="updateFaq(${i}, 'a', this.value)">${f.a}</textarea>
             </div>
         </div>`;
@@ -348,36 +348,36 @@ function removeFaq(i) { data.faq.splice(i, 1); renderFaq(); }
 $('#addSlide').addEventListener('click', () => {
     data.hero.push({
         image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80',
-        subtitle: 'New Slide',
-        title: 'Slide Title',
-        description: 'Slide description here.',
-        btn1Text: 'Button 1', btn1Link: '#',
-        btn2Text: 'Button 2', btn2Link: '#'
+        subtitle: '新轮播图',
+        title: '标题文字',
+        description: '描述文字。',
+        btn1Text: '按钮 1', btn1Link: '#',
+        btn2Text: '按钮 2', btn2Link: '#'
     });
     renderHero();
 });
 
 $('#addFeature').addEventListener('click', () => {
-    data.about.features.push({ icon: 'fas fa-star', title: 'New Feature', desc: 'Feature description' });
+    data.about.features.push({ icon: 'fas fa-star', title: '新特色', desc: '特色描述' });
     renderAbout();
 });
 
 $('#addService').addEventListener('click', () => {
-    data.services.push({ icon: 'fas fa-star', title: 'New Service', desc: 'Service description here.' });
+    data.services.push({ icon: 'fas fa-star', title: '新服务', desc: '服务描述。' });
     renderServices();
 });
 
 $('#addProduct').addEventListener('click', () => {
     data.products.push({
         image: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=500&q=80',
-        title: 'New Product',
-        desc: 'Product description'
+        title: '新产品',
+        desc: '产品描述'
     });
     renderProducts();
 });
 
 $('#addFaq').addEventListener('click', () => {
-    data.faq.push({ q: 'New Question?', a: 'Answer here.' });
+    data.faq.push({ q: '新问题？', a: '回答内容。' });
     renderFaq();
 });
 
@@ -421,16 +421,16 @@ $('#saveBtn').addEventListener('click', () => {
     collectContact();
     collectFooter();
     saveData(data);
-    showToast('All changes saved!');
+    showToast('所有更改已保存！');
 });
 
 // ===== RESET =====
 $('#resetBtn').addEventListener('click', () => {
-    if (confirm('Reset all data to defaults? This cannot be undone.')) {
+    if (confirm('确定要重置所有数据吗？此操作不可撤销。')) {
         localStorage.removeItem(STORAGE_KEY);
         data = JSON.parse(JSON.stringify(DEFAULT_DATA));
         renderAll();
-        showToast('Data reset to defaults!');
+        showToast('已恢复默认数据！');
     }
 });
 
